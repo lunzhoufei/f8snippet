@@ -45,3 +45,18 @@ func MapOperation() {
 	// see: https://www.jianshu.com/p/30e86473bdce
 
 }
+
+func sortedkeyMap() {
+	m := map[string]int{"feliz": 12, "foo": 234, "bar": 23}
+
+	key := make([]string)
+	for k := range m {
+		key = append(key, k)
+	}
+
+	sort.Strings(m)
+	for _, v := range key {
+		fmt.Printf("val=%v", m[v])
+	}
+
+}
