@@ -31,14 +31,17 @@ func SliceOperation() {
 	//
 	c = append(c, 1)
 	c = append(c, 1, 2, 3)
+	c = append(c, b...)
 
 	// -----------------------------------------------------------
 	// 拷贝
 	//
 	var copiedSize int = copy(c, d) // 深拷贝
 	cShadow := c                    // shadow copy
-	cDeep := make([]int32)
-	copy(cDeep, c) // depp copy
+
+	// deep copy
+	cDeep := make([]int32, len(c))
+	copy(cDeep, c)
 
 	// -----------------------------------------------------------
 	// 清空

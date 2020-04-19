@@ -5,7 +5,6 @@ import (
 	"time"
 )
 
-
 // 其中layout的时间必须是"2006-01-02 15:04:05"这个时间，
 // 不管格式如何，时间点一定得是这个，
 // 如："Jan 2, 2006 at 3:04pm (MST)"，"2006-Jan-02"等
@@ -49,6 +48,7 @@ const (
 	Hour                 = 60 * Minute
 )
 
+var specifyTime time.Time = time.Unix(123345235, 0)
 var currentTime time.Time = time.Now()
 var currentStamp int64 = time.Now().Unix()
 var formatTime string = time.Now().Format("01-01-2006 15:03:22")
@@ -73,13 +73,6 @@ func Query() {
 }
 
 // ============================================================================
-
-package main
-
-import (
-	"fmt"
-	"time"
-)
 
 func main() {
 	// See the example for Time.Format for a thorough description of how
